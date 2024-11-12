@@ -15,8 +15,5 @@ export const productLoader = async ({ params }: LoaderFunctionArgs) => {
   const id = params.id
   const query = productDetailQuery(id!)
 
-  return (
-    queryClient.getQueryData<any>(query.queryKey) ??
-    (await queryClient.fetchQuery(query))
-  )
+  return queryClient.ensureQueryData(query)
 }
