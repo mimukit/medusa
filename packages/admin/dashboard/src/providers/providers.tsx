@@ -1,6 +1,5 @@
 import { Toaster, TooltipProvider } from "@medusajs/ui"
 import { QueryClientProvider } from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import type { PropsWithChildren } from "react"
 import { HelmetProvider } from "react-helmet-async"
 import { I18n } from "../components/utilities/i18n"
@@ -27,7 +26,6 @@ export const Providers = ({ api, children }: ProvidersProps) => {
               <I18nProvider>{children}</I18nProvider>
               <Toaster />
             </ThemeProvider>
-            <ReactQueryDevtools initialIsOpen={false} position="bottom" />
           </QueryClientProvider>
         </HelmetProvider>
       </DashboardExtensionProvider>
